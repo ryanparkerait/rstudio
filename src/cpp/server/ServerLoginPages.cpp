@@ -57,6 +57,7 @@ void fillLoginFields(const core::http::Request& request,
 
    // fill stay signed in
    int timeoutMinutes = server::options().authTimeoutMinutes();
+   variables[kStaySignedInDisplay] = auth::handler::overlay::canStaySignedIn() ? "block" : "none";
    variables[kAuthTimeoutMinutesDisplay] = timeoutMinutes > 0 ? "block" : "none";
    variables[kAuthTimeoutMinutes] = core::safe_convert::numberToString(timeoutMinutes);
 

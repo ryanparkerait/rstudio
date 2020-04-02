@@ -42,7 +42,6 @@ namespace pam_auth {
 using namespace rstudio::core;
 
 bool canSetSignInCookies();
-bool canStaySignedIn();
 void onUserAuthenticated(const std::string& username,
                          const std::string& password);
 void onUserUnauthenticated(const std::string& username,
