@@ -1,7 +1,7 @@
 /*
  * Event.cpp
  *
- * Copyright (C) 2009-20 by RStudio, PBC
+ * Copyright (C) 2009-12 by RStudio, PBC
  *
  * Unless you have received this program directly from RStudio pursuant
  * to the terms of a commercial license agreement with RStudio, then
@@ -39,7 +39,7 @@ std::string eventScopeAndIdAsString(const Event& event)
          scope = "<unknown>";
          break;
    }
-   
+
    std::string id;
    switch(event.id())
    {
@@ -77,7 +77,7 @@ std::string eventScopeAndIdAsString(const Event& event)
          id = "<unknown>";
          break;
    }
-   
+
    return scope + "_" + id;
 }
 
