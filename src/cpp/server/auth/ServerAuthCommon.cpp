@@ -100,44 +100,6 @@ ErrorType checkUser(const std::string& username, bool authenticated)
       return kErrorUserUnauthorized;
    }
 
-   // ensure user is not throttled from logging in
-   if (auth::handler::isUserSignInThrottled(username))
-   {
-      using namespace monitor;
-      client().logEvent(Event(kAuthScope,
-                              kAuthLoginThrottledEvent,
-                              "",
-                              username));
-
-      return kErrorServer;
-   }
-
-   // ensure user is licensed to use the product
-   bool isLicensed = false;
-   core::Error error = auth::handler::overlay::isUserLicensed(username, &isLicensed);
-   if (error)
-   {
-      using namespace monitor;
-      client().logEvent(Event(kAuthScope,
-                              kAuthLicenseFailedEvent,
-                              "",
-                              username));
-
-      LOG_ERROR(error);
-      return kErrorUserLicenseSystemUnavailable;
-   }
-
-   if (!isLicensed)
-   {
-      using namespace monitor;
-      client().logEvent(Event(kAuthScope,
-                              kAuthLoginUnlicensedEvent,
-                              "",
-                              username));
-
-      return kErrorUserLicenseLimitReached;
-   }
-
    if (!authenticated) {
       // register failed login with monitor
       using namespace monitor;

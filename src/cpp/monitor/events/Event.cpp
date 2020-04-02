@@ -52,15 +52,6 @@ std::string eventScopeAndIdAsString(const Event& event)
       case kAuthLoginFailedEvent:
          id = "login_failed";
          break;
-      case kAuthLoginThrottledEvent:
-         id = "throttled";
-         break;
-      case kAuthLoginUnlicensedEvent:
-         id = "unlicensed";
-         break;
-      case kAuthLicenseFailedEvent:
-         id = "license_failed";
-         break;
       case kSessionStartEvent:
          id = "start";
          break;

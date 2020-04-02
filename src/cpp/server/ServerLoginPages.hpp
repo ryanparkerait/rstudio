@@ -45,8 +45,6 @@ enum ErrorType
    kErrorInvalidLogin,
    kErrorServer,
    kErrorUserUnauthorized,
-   kErrorUserLicenseLimitReached,
-   kErrorUserLicenseSystemUnavailable,
 };
 
 void loadLoginPage(const core::http::Request& request,

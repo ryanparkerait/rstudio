@@ -34,9 +34,6 @@ enum EventScope
 #define kAuthLoginEvent          1001
 #define kAuthLogoutEvent         1002
 #define kAuthLoginFailedEvent    1003
-#define kAuthLoginThrottledEvent 1004
-#define kAuthLicenseFailedEvent  1005
-#define kAuthLoginUnlicensedEvent 1006
 
 #define kSessionStartEvent       2001
 #define kSessionSuicideEvent     2002

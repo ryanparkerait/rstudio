@@ -45,10 +45,6 @@ std::string loginErrorMessage(ErrorType error)
          return "Temporary server error, please try again";
       case kErrorUserUnauthorized:
          return "Unauthorized user.";
-      case kErrorUserLicenseLimitReached:
-         return "The user limit for this license has been reached, or you are not allowed access.";
-      case kErrorUserLicenseSystemUnavailable:
-         return "The user licensing system is temporarily unavailable. Please try again later.";
    }
    return "";
 }
